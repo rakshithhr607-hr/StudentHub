@@ -21,6 +21,7 @@ import {
 import "./App.css";
 
 function App() {
+  const API_URL = import.meta.env.VITE_API_URL;
   // =========================================================
   // SESSION
   // =========================================================
@@ -138,9 +139,9 @@ function App() {
       }
 
       try {
-        const response = await fetch(
-          "http://localhost:5000/api/profile",
-          {
+       const response = await fetch(
+  `${API_URL}/profile`,
+  {
             method: "GET",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -359,8 +360,8 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/login",
-        {
+  `${API_URL}/auth/login`,
+  {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -421,9 +422,9 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
-        {
-          method: "POST",
+  `${API_URL}/auth/register`,
+  {
+    method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
