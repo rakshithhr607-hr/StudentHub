@@ -1,0 +1,1385 @@
+
+/* ================================
+   STUDENTHUB - GLOBAL STYLES
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f19;
+  color: #ffffff;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 15%, #141a35 0%, #0b0f19 48%, #080b12 100%);
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  width: 100%;
+  min-height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #252b3a;
+  background: rgba(8, 12, 21, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links span {
+  color: #cbd2e1;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-links span:hover {
+  color: #ffffff;
+}
+
+.logout-btn {
+  border: 0;
+  background: #6366f1;
+  color: white;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.logout-btn:hover {
+  background: #4f46e5;
+}
+
+/* ================================
+   MAIN / DASHBOARD
+================================ */
+
+.dashboard {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 75px 0 80px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 10px;
+  font-size: 38px;
+}
+
+.dashboard-header p {
+  margin: 0;
+  color: #9aa6bd;
+  font-size: 18px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 45px;
+}
+
+.dashboard-card {
+  min-height: 185px;
+  padding: 28px 20px;
+  border: 1px solid #293247;
+  border-radius: 17px;
+  background: #121827;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dashboard-card .card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 12px;
+  color: #cbd2e1;
+  font-size: 17px;
+}
+
+.dashboard-card p {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+/* ================================
+   ANALYTICS
+================================ */
+
+.analytics-section {
+  width: 100%;
+  margin: 35px 0 50px;
+  padding: 30px;
+  border: 1px solid #293247;
+  border-radius: 18px;
+  background: #101624;
+  text-align: left;
+}
+
+.analytics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 28px;
+}
+
+.analytics-header h2 {
+  margin: 0 0 7px;
+  font-size: 28px;
+}
+
+.analytics-header p {
+  margin: 0;
+  color: #8f9bb3;
+  font-size: 15px;
+}
+
+.completion-rate {
+  min-width: 145px;
+  padding: 17px 20px;
+  border-radius: 14px;
+  background: #171e30;
+  border: 1px solid #303a52;
+  text-align: center;
+}
+
+.completion-rate strong {
+  display: block;
+  font-size: 30px;
+  color: #818cf8;
+}
+
+.completion-rate span {
+  display: block;
+  margin-top: 4px;
+  color: #9aa6bd;
+  font-size: 13px;
+}
+
+.analytics-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.analytics-card {
+  min-height: 105px;
+  padding: 18px;
+  border: 1px solid #293247;
+  border-radius: 14px;
+  background: #151c2c;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.analytics-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #202940;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.analytics-card h3 {
+  margin: 0 0 5px;
+  font-size: 25px;
+}
+
+.analytics-card p {
+  margin: 0;
+  color: #9aa6bd;
+  font-size: 14px;
+}
+
+.progress-container {
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 14px;
+  background: #151c2c;
+  border: 1px solid #293247;
+}
+
+.progress-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #dce2ee;
+}
+
+.progress-title strong {
+  color: #818cf8;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #293247;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.4s ease;
+}
+
+.progress-message {
+  margin: 14px 0 0;
+  color: #9aa6bd;
+  font-size: 14px;
+}
+
+/* ================================
+   ADD TASK BUTTON
+================================ */
+
+.add-task-btn {
+  display: block;
+  margin: 0 auto 50px;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 11px;
+  background: #6366f1;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.add-task-btn:hover {
+  background: #4f46e5;
+}
+
+/* ================================
+   TASKS
+================================ */
+
+.tasks-section {
+  width: 100%;
+}
+
+.tasks-section h2,
+.dashboard > h2 {
+  text-align: center;
+  margin: 35px 0 25px;
+  font-size: 28px;
+}
+
+.task-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+  margin: 0 auto 25px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.task-filters input,
+.task-filters select {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #384157;
+  border-radius: 9px;
+  background: #151c2c;
+  color: #ffffff;
+  outline: none;
+  font-size: 14px;
+}
+
+.task-filters input:focus,
+.task-filters select:focus {
+  border-color: #6366f1;
+}
+
+.task-filters input::placeholder {
+  color: #737e95;
+}
+
+.task-card {
+  width: 100%;
+  min-height: 190px;
+  margin-bottom: 18px;
+  padding: 28px 30px;
+  border: 1px solid #293247;
+  border-radius: 17px;
+  background: #121827;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 25px;
+  align-items: center;
+}
+
+.task-card h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.task-card p {
+  color: #98a4bc;
+  margin: 7px 0;
+}
+
+.task-card strong {
+  color: #e7ebf3;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.priority-badge {
+  padding: 12px 16px;
+  border-radius: 30px;
+  background: #242d41;
+  color: #cbd2e1;
+  white-space: nowrap;
+}
+
+.status-select,
+.task-card select,
+.kanban-task select {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid #384157;
+  border-radius: 9px;
+  background: #151c2c;
+  color: #ffffff;
+  outline: none;
+}
+
+.edit-btn,
+.delete-btn {
+  min-height: 42px;
+  padding: 9px 17px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  border: 1px solid #4b5875;
+  background: #171f31;
+  color: #ffffff;
+}
+
+.edit-btn:hover {
+  background: #242e45;
+}
+
+.delete-btn {
+  border: 0;
+  background: #ef3340;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2633;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #8995ad;
+  padding: 35px;
+}
+
+/* ================================
+   KANBAN
+================================ */
+
+.kanban-board {
+  width: 100%;
+  margin-top: 55px;
+}
+
+.kanban-board > h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 0 25px;
+}
+
+.kanban-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.kanban-column {
+  min-height: 320px;
+  padding: 20px;
+  border: 1px solid #293247;
+  border-radius: 16px;
+  background: #121827;
+}
+
+.kanban-column.todo {
+  border-top: 3px solid #6366f1;
+}
+
+.kanban-column.progress {
+  border-top: 3px solid #f59e0b;
+}
+
+.kanban-column.done {
+  border-top: 3px solid #22c55e;
+}
+
+.kanban-column h3 {
+  text-align: center;
+  margin: 5px 0 25px;
+  font-size: 19px;
+  color: #d8deea;
+}
+
+.kanban-task {
+  padding: 18px;
+  margin-bottom: 14px;
+  border: 1px solid #303a50;
+  border-radius: 13px;
+  background: #192132;
+}
+
+.kanban-task h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.kanban-task p {
+  margin: 6px 0;
+  color: #99a5bc;
+  font-size: 14px;
+}
+
+.kanban-task small {
+  display: block;
+  margin: 10px 0 13px;
+  color: #aab3c4;
+}
+
+.kanban-task select {
+  width: 100%;
+  min-height: 38px;
+}
+
+.kanban-empty {
+  text-align: center;
+  color: #6f7c95;
+  margin-top: 60px;
+}
+
+/* ================================
+   LOGIN / REGISTER / FORMS
+================================ */
+
+.login-page {
+  min-height: calc(100vh - 82px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.login-card {
+  width: min(500px, 100%);
+  padding: 35px;
+  border: 1px solid #293247;
+  border-radius: 18px;
+  background: #121827;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-icon {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #8995ad;
+  margin-bottom: 28px;
+}
+
+.login-card label {
+  display: block;
+  margin: 16px 0 7px;
+  color: #d5dbe7;
+  font-weight: 600;
+}
+
+.login-card input,
+.login-card select,
+.login-card textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #384157;
+  border-radius: 9px;
+  background: #151c2c;
+  color: #ffffff;
+  outline: none;
+}
+
+.login-card input:focus,
+.login-card select:focus,
+.login-card textarea:focus {
+  border-color: #6366f1;
+}
+
+.login-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 25px;
+  border: 0;
+  border-radius: 10px;
+  background: #6366f1;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #4f46e5;
+}
+
+.login-card .add-task-btn {
+  width: 100%;
+  margin: 14px 0 0;
+  background: #202940;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kanban-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .task-card {
+    grid-template-columns: 1fr;
+  }
+
+  .task-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 15px 5%;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dashboard {
+    width: 92%;
+    padding-top: 45px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-section {
+    padding: 20px;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .analytics-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .task-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .task-card {
+    padding: 22px;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-actions > * {
+    width: 100%;
+  }
+
+  .login-card {
+    padding: 25px 20px;
+  }
+}
+/* ================================
+   FINAL DASHBOARD POLISH
+================================ */
+
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  opacity: 0.9;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  border-color: #4b5875;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-card .card-icon {
+  transition: transform 0.25s ease;
+}
+
+.dashboard-card:hover .card-icon {
+  transform: scale(1.12);
+}
+/* ================================
+   NAVBAR POLISH
+================================ */
+
+.nav-links span {
+  position: relative;
+  padding: 8px 2px;
+  transition: color 0.25s ease;
+}
+
+.nav-links span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 10px;
+  background: #6366f1;
+  transition: width 0.25s ease;
+}
+
+.nav-links span:hover {
+  color: #ffffff;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+}
+
+.logout-btn {
+  transition: background 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(99, 102, 241, 0.25);
+}
+/* ================================
+   PROFESSIONAL BUTTON POLISH
+================================ */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Main buttons */
+.login-btn,
+.add-task-btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.login-btn:hover:not(:disabled),
+.add-task-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.25);
+}
+
+.login-btn:active:not(:disabled),
+.add-task-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Edit button */
+.edit-btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.2);
+}
+
+/* Delete button */
+.delete-btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.2);
+}
+
+/* Form inputs */
+input,
+select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Task cards */
+.task-card {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Kanban tasks */
+.kanban-task {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.kanban-task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+/* ================================
+   PROFESSIONAL NAVBAR POLISH
+================================ */
+
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.18);
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.nav-links span {
+  position: relative;
+  padding: 8px 2px;
+  transition: color 0.2s ease;
+}
+
+.nav-links span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 5px;
+  background: #6366f1;
+  transition: width 0.25s ease;
+}
+
+.nav-links span:hover {
+  color: #ffffff;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+}
+
+/* Active-looking navigation item */
+.nav-links span:not([onclick]) {
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 14px 5%;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .nav-links span {
+    font-size: 15px;
+  }
+}
+/* ================================
+   DASHBOARD PROFESSIONAL POLISH
+================================ */
+
+/* Dashboard heading */
+.dashboard-header h1 {
+  letter-spacing: -0.8px;
+}
+
+.dashboard-header p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Dashboard cards */
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 195px;
+  background: linear-gradient(
+    145deg,
+    #141b2b,
+    #101624
+  );
+}
+
+.dashboard-card::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: -55px;
+  bottom: -55px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover::after {
+  transform: scale(1.5);
+}
+
+/* Dashboard icons */
+.dashboard-card .card-icon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #202940;
+  border: 1px solid #303a52;
+  font-size: 27px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Dashboard card titles */
+.dashboard-card h3 {
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.2px;
+}
+
+/* Dashboard numbers */
+.dashboard-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 38px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* Analytics section */
+.analytics-section {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.analytics-header h2 {
+  letter-spacing: -0.5px;
+}
+
+/* Completion percentage */
+.completion-rate {
+  box-shadow: inset 0 0 20px rgba(99, 102, 241, 0.06);
+}
+
+.completion-rate strong {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+/* Analytics cards */
+.analytics-card {
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.analytics-card:hover {
+  transform: translateY(-3px);
+  border-color: #3f4b68;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.analytics-icon {
+  transition: transform 0.22s ease;
+}
+
+.analytics-card:hover .analytics-icon {
+  transform: scale(1.08);
+}
+
+/* Progress area */
+.progress-container {
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.08);
+}
+
+.progress-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  animation: progressShine 2.5s infinite;
+}
+
+@keyframes progressShine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+/* Empty Kanban columns */
+.kanban-empty {
+  text-align: center;
+  color: #737e95;
+  padding: 45px 10px;
+  font-size: 14px;
+}
+
+/* Better task list spacing */
+.task-list {
+  width: 100%;
+}
+
+/* Mobile dashboard improvements */
+@media (max-width: 700px) {
+  .dashboard-header {
+    margin-bottom: 30px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+
+  .dashboard-header p {
+    font-size: 15px;
+  }
+
+  .dashboard-card {
+    min-height: 170px;
+  }
+
+  .dashboard-card p {
+    font-size: 34px;
+  }
+
+  .analytics-section {
+    margin-top: 25px;
+  }
+}
+/* ================================
+   PROFESSIONAL TASKS PAGE POLISH
+================================ */
+
+.tasks-section {
+  margin-top: 10px;
+}
+
+.tasks-section h2 {
+  letter-spacing: -0.5px;
+}
+
+/* Search and filters */
+.task-filters {
+  padding: 16px;
+  border: 1px solid #293247;
+  border-radius: 15px;
+  background: #101624;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.task-filters input,
+.task-filters select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-filters input:focus,
+.task-filters select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Task card */
+.task-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.task-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #6366f1;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  border-color: #3d4862;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.task-card:hover::before {
+  opacity: 1;
+}
+
+/* Task title */
+.task-card h3 {
+  letter-spacing: -0.2px;
+}
+
+/* Task information */
+.task-card p {
+  line-height: 1.5;
+}
+
+/* Priority badge */
+.priority-badge {
+  border: 1px solid #343e56;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.task-card:hover .priority-badge {
+  border-color: #4b5875;
+  transform: translateY(-1px);
+}
+
+/* Status selector */
+.status-select,
+.task-card select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.status-select:focus,
+.task-card select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+/* Action buttons */
+.edit-btn,
+.delete-btn {
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Empty task state */
+.no-tasks {
+  width: 100%;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #303a50;
+  border-radius: 15px;
+  background: #101624;
+  font-size: 15px;
+}
+
+/* Kanban improvements */
+.kanban-column {
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.kanban-column:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.kanban-task {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.kanban-task:hover {
+  transform: translateY(-2px);
+  border-color: #3d4862;
+}
+
+/* Mobile task improvements */
+@media (max-width: 700px) {
+  .task-filters {
+    padding: 12px;
+  }
+
+  .task-card {
+    min-height: auto;
+  }
+
+  .task-card h3 {
+    font-size: 19px;
+  }
+
+  .task-actions {
+    gap: 9px;
+  }
+
+  .kanban-column {
+    min-height: 250px;
+  }
+}
+/* ================================
+   SUBJECTS & PROFILE PAGE POLISH
+================================ */
+
+/* Subjects */
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.subject-card {
+  padding: 24px;
+  border: 1px solid #293247;
+  border-radius: 16px;
+  background: #121827;
+  transition: transform 0.22s ease, border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+  border-color: #4b5875;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Profile card */
+.profile-card {
+  transition: transform 0.22s ease, border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.profile-card:hover {
+  border-color: #3d4862;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Profile avatar */
+.profile-avatar {
+  transition: transform 0.25s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Form fields */
+.login-card input,
+.login-card select,
+.login-card textarea {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-card input:focus,
+.login-card select:focus,
+.login-card textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+/* Form buttons */
+.login-btn,
+.add-task-btn {
+  transition: transform 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-btn:hover,
+.add-task-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.18);
+}
+
+/* Responsive subjects */
+@media (max-width: 900px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+}
