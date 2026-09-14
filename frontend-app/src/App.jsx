@@ -179,29 +179,24 @@ function App() {
 
           setPage("login");
         }
-      } catch (error) {
-        console.error("Session check error:", error);
+     } catch (error) {
+  console.error("Session check error:", error);
 
-        try {
-          const savedUserData = JSON.parse(user);
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
 
-          if (savedUserData) {
-            setProfile({
-              name: savedUserData.name || "",
-              email: savedUserData.email || "",
-              course: savedUserData.course || "",
-              year: savedUserData.year || "",
-            });
+  setTasks([]);
+  setSubjects([]);
 
-            setPage("dashboard");
-          }
-        } catch (parseError) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
+  setProfile({
+    name: "",
+    email: "",
+    course: "",
+    year: "",
+  });
 
-          setPage("login");
-        }
-      } finally {
+  setPage("login");
+} finally {
         setSessionChecking(false);
       }
     };
