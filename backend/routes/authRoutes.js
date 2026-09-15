@@ -5,19 +5,16 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-// ==================== REGISTER ====================
 router.post("/register", async (req, res) => {
     try {
         const { name, email, password, course, year } = req.body;
 
-        // Check required fields
         if (!name || !email || !password) {
             return res.status(400).json({
                 message: "Name, email and password are required"
             });
         }
 
-        // Check if user already exists
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
@@ -26,10 +23,8 @@ router.post("/register", async (req, res) => {
             });
         }
 
-        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create user
         const user = await User.create({
             name,
             email,
@@ -53,25 +48,28 @@ router.post("/register", async (req, res) => {
         console.error("Registration error:", error);
 
         res.status(500).json({
-            message: "Server error during registration"
+            message: error.message || "Server error during registration"
         });
     }
 });
 
-// ==================== LOGIN ====================
 router.post("/login", async (req, res) => {
     try {
+        console.log("LOGIN REQUEST RECEIVED");
+
         const { email, password } = req.body;
 
-        // Check required fields
+        console.log("Email received:", email);
+
         if (!email || !password) {
             return res.status(400).json({
                 message: "Email and password are required"
             });
         }
 
-        // Find user
         const user = await User.findOne({ email });
+
+        console.log("User found:", !!user);
 
         if (!user) {
             return res.status(401).json({
@@ -79,11 +77,14 @@ router.post("/login", async (req, res) => {
             });
         }
 
-        // Compare password
+        console.log("Stored password exists:", !!user.password);
+
         const isPasswordCorrect = await bcrypt.compare(
             password,
             user.password
         );
+
+        console.log("Password correct:", isPasswordCorrect);
 
         if (!isPasswordCorrect) {
             return res.status(401).json({
@@ -91,15 +92,18 @@ router.post("/login", async (req, res) => {
             });
         }
 
-        // Create JWT token
+        console.log("JWT_SECRET exists:", !!process.env.JWT_SECRET);
+
+        if (!process.env.JWT_SECRET) {
+            return res.status(500).json({
+                message: "JWT_SECRET is missing from backend .env"
+            });
+        }
+
         const token = jwt.sign(
-            {
-                userId: user._id
-            },
+            { userId: user._id },
             process.env.JWT_SECRET,
-            {
-                expiresIn: "7d"
-            }
+            { expiresIn: "7d" }
         );
 
         res.status(200).json({
@@ -115,10 +119,10 @@ router.post("/login", async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Login error:", error);
+        console.error("LOGIN ERROR:", error);
 
         res.status(500).json({
-            message: "Server error during login"
+            message: error.message || "Server error during login"
         });
     }
 });
